@@ -60,7 +60,7 @@ public class HttpServer {
                             +"<input type='text' class='form-control' placeholder='Ciudad' name='ciudad' id='ciudad'  >"
                             +"<input id='boton-ciudad' type='button' value='CONSULTAR' onclick='traerClima()' >"
                             +"<p  id='ciudadResult' ><b></b></p>"
-                            + "</body>"
+
                             +"<script src=\"https://unpkg.com/axios/dist/axios.min.js\" >"
                             +"function traerClima() {"
                             +"var value = document.getElementById('ciudad').value;"
@@ -68,6 +68,7 @@ public class HttpServer {
                             +"axios.get(url1) .then(res => { var obj = JSON.parse(res.data); $('#ciudadResult').text(obj); console.log(obj); })"
                             +"}"
                             +"</script>"
+                            + "</body>"
                             + "</html>";
                 }else if (file.startsWith("/consulta")){
 
