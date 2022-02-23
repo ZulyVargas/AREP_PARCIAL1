@@ -57,14 +57,24 @@ public class HttpServer {
                             + "</head>"
                             + "<body>"
                             + "Clima API"
+                            +"<input type='text' class='form-control' placeholder='Ciudad' id='Ciudad'  >"
+                            +"<input id='boton-ciudad' type='submit' value='CONSULTAR' >"
+                            +"<p  id='ciudadResult' ><b></b></p>"
                             + "</body>"
+                            +"<script>"
+                            +"var button = document.getElementById('boton-ciudad');"
+                            +"button.addEventListener('click', function () {  var value = document.getElementById('Ciudad').value;"
+                            +"var url1 = 'https://clima1api.herokuapp.com/consulta/?lugar=value;"
+                            +"axios.get(url1) .then(res => { var obj = JSON.parse(res.data); $('ciudadResult').text(obj); console.log(obj); })"
+                            +".catch(function (error) {"
+                            +"console.log(error);"
+                            +"})"
+                            +"});"
+                            +"</script>"
                             + "</html>";
                 }else if (file.startsWith("/consulta")){
-                    System.out.println("FILE "+file);
+
                     String ciudad = file.split("=")[1];
-
-
-                    System.out.println("CIUDAD RECIBIDAAA "+ciudad);
                     outputLine = "HTTP/1.1 200 OK\r\n"
                             + "Content-Type: text/html\r\n"
                             + "\r\n"
