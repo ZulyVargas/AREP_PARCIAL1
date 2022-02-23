@@ -29,29 +29,75 @@ public class HttpServer {
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(
                             clientSocket.getInputStream()));
-            String inputLine, outputLine;
-            boolean primeraLinea = true;
+            String inputLine, outputLine="";
             String file = "";
+            boolean primeraLinea = true;
             while ((inputLine = in.readLine()) != null) {
+                if (primeraLinea) {
+                    file = inputLine.split(" ")[1];
+                    System.out.println("File: " + file);
+                    primeraLinea = false;
+                }
                  System.out.println("Received: " + inputLine);
+                 System.out.println("FILE " + file);
                 if (!in.ready()) {
-                     break;
+                    break;
                 }
             }
 
-            outputLine = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: text/html\r\n"
-                    + "\r\n"
-                    + "<!DOCTYPE html>"
-                    + "<html>"
-                    + "<head>"
-                    + "<meta charset=\"UTF-8\">"
-                    + "<title>Title of the document</title>\n"
-                    + "</head>"
-                    + "<body>"
-                    + "Clima API"
-                    + "</body>"
-                    + "</html>";
+                if (file.startsWith("/clima")){
+                    outputLine = "HTTP/1.1 200 OK\r\n"
+                            + "Content-Type: text/html\r\n"
+                            + "\r\n"
+                            + "<!DOCTYPE html>"
+                            + "<html>"
+                            + "<head>"
+                            + "<meta charset=\"UTF-8\">"
+                            + "<title>API del Clima</title>\n"
+                            + "</head>"
+                            + "<body>"
+                            + "Clima API"
+                            + "</body>"
+                            + "</html>";
+                }else if (file.startsWith("/consulta")){
+                    System.out.println("FILE "+file);
+                    String ciudad = file.split("=")[1];
+
+
+                    System.out.println("CIUDAD RECIBIDAAA "+ciudad);
+                    outputLine = "HTTP/1.1 200 OK\r\n"
+                            + "Content-Type: text/html\r\n"
+                            + "\r\n"
+                            + "<!DOCTYPE html>"
+                            + "<html>"
+                            + "<head>"
+                            + "<meta charset=\"UTF-8\">"
+                            + "<title>Consulta Clima</title>\n"
+                            + "</head>"
+                            + "<body>"
+                            + ClimaApi.consultaClimaCiudad(ciudad)
+                            + "</body>"
+                            + "</html>";
+                }
+                else {
+                    outputLine = "HTTP/1.1 200 OK\r\n"
+                            + "Content-Type: text/html\r\n"
+                            + "\r\n"
+                            + "<!DOCTYPE html>"
+                            + "<html>"
+                            + "<head>"
+                            + "<meta charset=\"UTF-8\">"
+                            + "<title>404</title>\n"
+                            + "</head>"
+                            + "<body>"
+                            + "Página no encontrada"
+                            + "</body>"
+                            + "</html>";
+
+
+
+                }
+
             out.println(outputLine);
             out.close();
             in.close();
