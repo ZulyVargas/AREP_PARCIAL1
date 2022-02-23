@@ -60,7 +60,6 @@ public class HttpServer {
                             +"<input type='text' class='form-control' placeholder='Ciudad' name='ciudad' id='ciudad'  >"
                             +"<input id='boton-ciudad' type='button' value='CONSULTAR' onclick='traerClima()' >"
                             +"<p  id='ciudadResult' ><b></b></p>"
-
                             +"<script src=\"https://unpkg.com/axios/dist/axios.min.js\" >"
                             +"function traerClima() {"
                             +"var value = document.getElementById('ciudad').value;"
