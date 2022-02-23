@@ -65,7 +65,7 @@ public class HttpServer {
                             +"<script>"
                             +"function traerClima() {"
                             +"var value = document.getElementById('ciudad').value;"
-                            +"var url1 = 'https://clima1api.herokuapp.com/consulta/?lugar='+value;"
+                            +"var url1 = 'https://clima1api.herokuapp.com/consulta?lugar='+value;"
                             +"axios.get(url1) .then(res => { var obj = JSON.parse(res.data); $('ciudadResult').text(obj); console.log(obj); })"
                             +"}"
                             +"</script>"
