@@ -62,7 +62,7 @@ public class HttpServer {
                             +"<input id='boton-ciudad' type='button' value='CONSULTAR' onclick='traerClima()' ></form>"
                             +"<p  id='ciudadResult' ><b></b></p>"
                             + "</body>"
-                            +"<script>"
+                            +"<script src=\"https://unpkg.com/axios/dist/axios.min.js\" >"
                             +"function traerClima() {"
                             +"var value = document.getElementById('ciudad').value;"
                             +"var url1 = 'https://clima1api.herokuapp.com/consulta?lugar='+value;"
