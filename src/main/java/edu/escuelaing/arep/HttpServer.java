@@ -72,6 +72,7 @@ public class HttpServer {
                             +"}"
                             +"async function fetchData(value){  \n"
                             +"const url = `${url1}${value}`;"
+                            +"console.log('Url en fecth', url);\n"
                             +"const res = await fetch(url, { \n"
                             +" method: 'GET',\n"
                             +"headers: {\n"
