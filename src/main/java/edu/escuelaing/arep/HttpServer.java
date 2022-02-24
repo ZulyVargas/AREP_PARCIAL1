@@ -78,7 +78,6 @@ public class HttpServer {
                             +"'Content-Type': 'application/json'"
                             +" }"
                             +"});"
-                            + "console.log(obj);\n"
                             +"}"
                             +"</script>"
                             + "</body>"
