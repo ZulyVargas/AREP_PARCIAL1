@@ -13,6 +13,8 @@ A continuación podrá encontrar los pasos ccon los cuales puede acceder a la ap
 * [Java ](https://www.oracle.com/co/java/technologies/javase/javase-jdk8-downloads.html)  Lenguaje de desarrollo
 * [Git](https://git-scm.com/) - Sistema de control de versiones
 
+***Nota:** Para visualizar mejor las imagenes de ejemplo y explicación puede hacer click sobre ellas.*
+
 ### Instalación
 
 
