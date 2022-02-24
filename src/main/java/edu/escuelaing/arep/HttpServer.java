@@ -91,18 +91,9 @@ public class HttpServer {
 
                     String ciudad = file.split("=")[1];
                     outputLine = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: text/html\r\n"
+                            + "Content-Type: application/html\r\n"
                             + "\r\n"
-                            + "<!DOCTYPE html>"
-                            + "<html>"
-                            + "<head>"
-                            + "<meta charset=\"UTF-8\">"
-                            + "<title>Consulta Clima</title>\n"
-                            + "</head>"
-                            + "<body>"
-                            + ClimaApi.consultaClimaCiudad(ciudad)
-                            + "</body>"
-                            + "</html>";
+                            + ClimaApi.consultaClimaCiudad(ciudad);
                 }
                 else {
                     outputLine = "HTTP/1.1 200 OK\r\n"
