@@ -79,8 +79,9 @@ public class HttpServer {
                             +"'Content-Type': 'application/json'"
                             +" }"
                             +"});"
-                            + "const result = await res.json();\n" +
-                            "return result;\n"
+                            + "const result = await res;\n"
+                            +"const obj = JSON.parse(res.data);"
+                            +"return obj;\n"
                             +"}"
                             +"</script>"
                             + "</body>"
