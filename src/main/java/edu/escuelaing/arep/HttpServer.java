@@ -71,7 +71,6 @@ public class HttpServer {
                             +"}"
                             +"async function fetchData(value){  "
                             +"const url = `${url1}${value}`;"
-                            +"mode: 'no cors';"
                             +"const res = await fetch(url, {"
                             +"method:'GET',"
                             +"headers:{"
