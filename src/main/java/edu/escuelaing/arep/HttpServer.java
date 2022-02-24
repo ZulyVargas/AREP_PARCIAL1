@@ -68,7 +68,7 @@ public class HttpServer {
                             +"async function traerClima(){ \n"
                             +"const ans = await fetchData(valueCiudad.value);"
                             +"const res = JSON.stringify(ans);"
-                            +" valueCiudad.innerHTML = `${res}`;"
+                            +" ciudad.innerHTML = `${res}`;"
                             +"}"
                             +"async function fetchData(value){  \n"
                             +"const url = `${url1}${value}`;"
